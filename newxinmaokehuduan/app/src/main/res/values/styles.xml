@@ -1,0 +1,140 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="MyAppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!--<item name="android:windowAnimationStyle">@style/HoloThemeActivityAnimation</item>-->
+        <!--<item name="colorPrimaryDark">@color/bg_color_0</item>-->
+        <!--<item name="colorPrimary">@color/black</item>-->
+        <!--<item name="colorAccent">@color/black</item>-->
+        <!-- 设置背景透明，右滑时才能看到上一个界面，否则会看到黑屏效果-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--防止多点触控-->
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/loading_dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="myloading_dialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/loading_dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here.
+           <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+         -->
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="baseTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
+    </style>
+
+
+
+    <style name="MyDialogStyle" parent="@android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="dialog_normal" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground"> @android:color/transparent </item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 这个好像是系统的动画  和SDK的版本有关系  <item name="android:windowAnimationStyle">@+android:style/Animation.Dialog</item> -->
+    </style>
+
+
+    <!--BallClipRotateIndicator-->
+    <style name="AVLoadingIndicatorView">
+        <item name="minWidth">48dip</item>
+        <item name="maxWidth">48dip</item>
+        <item name="minHeight">48dip</item>
+        <item name="maxHeight">48dip</item>
+        <item name="indicatorName">BallClipRotateIndicator</item>
+    </style>
+
+    <style name="AVLoadingIndicatorView.Large">
+        <item name="minWidth">76dip</item>
+        <item name="maxWidth">76dip</item>
+        <item name="minHeight">76dip</item>
+        <item name="maxHeight">76dip</item>
+        <item name="indicatorName">BallClipRotateIndicator</item>
+    </style>
+
+    <style name="AVLoadingIndicatorView.Small">
+        <item name="minWidth">24dip</item>
+        <item name="maxWidth">24dip</item>
+        <item name="minHeight">24dip</item>
+        <item name="maxHeight">24dip</item>
+        <item name="indicatorName">BallClipRotateIndicator</item>
+    </style>
+
+    <style name="mystyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="noTitle" parent="@android:style/Theme.Dialog">
+
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <!--自定义dialog背景全透明无边框theme -->
+    <style name="MyDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

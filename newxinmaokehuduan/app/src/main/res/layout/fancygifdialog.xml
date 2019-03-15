@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gifImageView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="加载中请稍后"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_12" />
+
+
+</LinearLayout>

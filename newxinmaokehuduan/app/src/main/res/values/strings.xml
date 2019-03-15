@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">鑫茂荣信财富</string>
+
+    <string name="action_settings">设置</string>
+    <string name="title_activity_mini_qb">MiniQBActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string-array name="index_titles">
+        <item>浏览器demo</item>
+        <item>全屏播放</item>
+        <item>文件选择器</item>
+    </string-array>
+
+
+
+    <!-- Gesture code starting -->
+    <string name="setup_gesture_code">设置手势密码</string>
+    <string name="setup_gesture_pattern">绘制解锁图案</string>
+    <string name="setup_gesture_pattern_again">再次绘制解锁图案</string>
+    <string name="forget_gesture_code">忘记手势密码?</string>
+    <string name="use_other_account_login">账户密码登录</string>
+    <string name="set_gesture_pattern">绘制解锁图案</string>
+    <string name="set_gesture_pattern_reason">""</string>
+    <string name="reset_gesture_code">再次绘制解锁图案</string>
+
+
+    <string name="prompt">提示</string>
+    <string name="exit_app">你确定要退出应用吗?</string>
+    <string name="confirm">开启</string>
+    <string name="cancel">取消</string>
+    <string name="dismiss">隐藏</string>
+    <string name="verify_error">指纹校验错误,转密码支付</string>
+    <string name="verify_failed">指纹验证错误，请重试</string>
+    <string name="start_failed">开始失败，设备暂时锁定</string>
+</resources>

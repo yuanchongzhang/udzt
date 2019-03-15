@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+version = "1.0.0"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 25
+        versionCode 1
+        versionName version
+        /*  ndk {
+              //设置支持的SO库架构
+              abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'//, 'x86', 'x86_64'
+          }*/
+
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions { // 消除lint警告
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    compile files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+}
+
+def siteUrl = 'https://github.com/lzyzsd/JsBridge'
+def gitUrl = 'https://github.com/lzyzsd/JsBridge.git'
+apply plugin: 'com.github.dcendents.android-maven'
+group = "com.github.lzyzsd.jsbridge"
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="770px"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_juxing"
+
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80px"
+        android:gravity="center"
+        android:text="是否打开 优点智投 APP"
+        android:textColor="@color/black"
+        android:textSize="44px" />
+
+    <TextView
+        android:id="@+id/text_phone"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40px"
+        android:gravity="center"
+        android:text="13674610754"
+        android:visibility="gone"
+        android:textColor="#323232"
+        android:textSize="46px" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+
+        android:layout_marginTop="45px"
+        android:background="#D2D2D2"></View>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#147EFB"
+            android:textSize="44px" />
+
+        <View
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:background="#D2D2D2"></View>
+
+        <TextView
+            android:id="@+id/text_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:text="确定"
+            android:textColor="#147EFB"
+            android:textSize="44px" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_bar_height"
+        android:background="@color/status_bar"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/iv_welcome_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/v6splash32_five"
+        android:visibility="visible"
+        />
+    <!--  android:scaleType="fitXY"
+        android:scaleType="centerCrop"
+                android:src="@drawable/v6splash3"
+    -->
+    <RelativeLayout
+        android:id="@+id/rl_show_ad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/iv_ad_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+
+            />
+        <!--   android:scaleType="fitXY"
+          android:scaleType="centerCrop"
+        -->
+        <RelativeLayout
+            android:id="@+id/rl_jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40px"
+            android:layout_marginTop="95px"
+            android:background="@drawable/shape_juxing_jump">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:id="@+id/ll_ad_skip_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:paddingLeft="@dimen/dp_5"
+
+                    android:paddingTop="@dimen/dp_5"
+                    android:text="跳过 "
+                    android:textColor="#ffffffff"
+                    android:textSize="36px" />
+                <!---->
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingRight="@dimen/dp_5"
+                    android:textColor="#ffffffff"
+                    android:textSize="34px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_network"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:layout_alignParentTop="true"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="网络不可用"
+                android:textColor="#252525"
+                android:textSize="49px" />
+
+            <TextView
+                android:id="@+id/text_cancel"
+                android:layout_width="30px"
+                android:layout_height="50px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:background="@mipmap/mybtn_return"
+                android:text=""
+
+
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#DBDBDB"></View>
+
+
+        <ImageView
+            android:id="@+id/img_network"
+            android:layout_width="370px"
+            android:layout_height="370px"
+            android:layout_gravity="center"
+            android:layout_marginTop="300px"
+
+            android:src="@drawable/network" />
+
+        <TextView
+            android:id="@+id/text_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60px"
+            android:gravity="center"
+            android:text="数据加载失败,请检查一下你的网络"
+            android:textColor="#999999"
+            android:textSize="45px" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

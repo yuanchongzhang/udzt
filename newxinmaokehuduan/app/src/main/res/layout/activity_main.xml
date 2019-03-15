@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zq.jsbridgedemo.MainActivity">
+    <!-- button 演示Java调用web -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:text="Java调用Web方法并得到返回值"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:visibility="gone" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <com.github.lzyzsd.jsbridge.BridgeWebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.github.lzyzsd.jsbridge.BridgeWebView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_network"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40px" />
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:layout_alignParentTop="true"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="网络不可用"
+                android:textColor="#252525"
+                android:textSize="49px" />
+
+            <TextView
+                android:id="@+id/text_cancel"
+                android:layout_width="30px"
+                android:layout_height="50px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:background="@mipmap/mybtn_return"
+                android:text=""
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#DBDBDB"></View>
+
+
+        <ImageView
+            android:id="@+id/img_network"
+            android:layout_width="370px"
+            android:layout_height="370px"
+            android:layout_gravity="center"
+            android:layout_marginTop="300px"
+
+            android:src="@drawable/network" />
+
+        <TextView
+            android:id="@+id/text_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60px"
+            android:gravity="center"
+            android:text="数据加载失败,请检查一下你的网络"
+            android:textColor="#999999"
+            android:textSize="45px" />
+
+        <TextView
+            android:id="@+id/text_shijian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20px"
+
+            android:gravity="center"
+            android:text="点击重试"
+            android:textColor="#1D82FB"
+            android:textSize="40px" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/title_view_new"
+
+        android:layout_width="100px"
+        android:layout_height="140px"
+        android:background="#00000000"
+        android:visibility="visible" />
+
+    <com.xmrxcaifu.util.NewTextView
+        android:id="@+id/text_Devicetoken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:text="devicetoken"
+        android:visibility="gone" />
+</RelativeLayout>

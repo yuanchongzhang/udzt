@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xmrxcaifu">
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name="com.xmrxcaifu.App"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/logo_five"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="design_width"
+            android:value="1080"/>
+        <meta-data
+            android:name="design_height"
+            android:value="1920"/>
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="6.8" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5ac995b0a40fa336c10000c3"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng"/>
+        <meta-data
+            android:name="ZHUGE_APPKEY"
+            android:value="097e2222fe1544a68cd3203bcac04d2a" />
+        <meta-data
+            android:name="ZHUGE_CHANNEL"
+            android:value="应用宝" />
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="94d56cb870" />
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="false" />
+
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="2e606d74d3f38f70d38404ad73583f7f" />
+
+
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="e58d3a7972" />
+
+
+        <service android:name="com.xmrxcaifu.service.MyService"></service>
+        <!--友盟-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.xmrxcaifu.jsbridge.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".service.FirstLoadingX5Service"></service>
+
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+
+            android:label="dexopt"
+
+            android:process=":dexopt" />
+
+        <!--魅族push应用定义消息receiver声明 -->
+        <receiver android:name="com.xmrxcaifu.service.MeizuTestReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.meizu.flyme.push.intent.MESSAGE" />
+                <!-- 接收register消息 -->
+                <action android:name="com.meizu.flyme.push.intent.REGISTER.FEEDBACK" />
+                <!-- 接收unregister消息-->
+                <action android:name="com.meizu.flyme.push.intent.UNREGISTER.FEEDBACK" />
+                <!-- 兼容低版本Flyme3推送服务配置 -->
+                <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
+                <action android:name="com.meizu.c2dm.intent.RECEIVE" />
+
+                <category android:name="${applicationId}"></category>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!--  -->
+        </activity>
+        <activity
+            android:name="com.xmrxcaifu.activity.MipushActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:name="com.xmrxcaifu.activity.GestureEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+
+        </activity>
+        <activity
+            android:name="com.xmrxcaifu.activity.ShopActivity2"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.ShopActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.TestWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.xmrxcaifu.activity.RegisterShopActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.xmrxcaifu.activity.ForgetShopActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.xmrxcaifu.activity.RegisterShopSettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.xmrxcaifu.activity.LoginShopActivity"
+
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name="com.xmrxcaifu.wxapi.WXEntryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.GestureVerifyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+
+        </activity>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.V6_Finger_Check_NewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.xmrxcaifu.activity.UdrmbWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.xmrxcaifu.activity.V6_Finger_Check_NewActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.xmrxcaifu.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name="com.xmrxcaifu.MainActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize|fontScale"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <!--    android:screenOrientation="portrait"
+                    android:launchMode="singleTask"
+        -->
+        <activity
+            android:name="com.xmrxcaifu.activity.MainActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+
+        <!--android:launchMode="singleTask"-->
+        <!--android:screenOrientation="portrait"-->
+        <activity
+            android:name="com.xmrxcaifu.photopick.PhotoPickActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name="com.xmrxcaifu.photopick.PhotoPickDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.RegisterSettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="DWWBZ-6WU3P-DXXD7-VG4FR-66VF2-ICF4O" />
+
+
+        <activity
+            android:name="com.xmrxcaifu.activity.ForgetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.V4GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.GestureMotifyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.LoginActivity2"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/AppTheme"/>
+        <!-- D:\youmeng\newdemo\umeng_android_social_sdk_6.4.5_custom\platforms\QQ精简版\com\umeng\qq\tencent-->
+        <!--   <activity
+               android:name="com.umeng.tauth.AuthActivity"
+               android:launchMode="singleTask"
+               android:noHistory="true" >
+               <intent-filter>
+                   <action android:name="android.intent.action.VIEW" />
+
+                   <category android:name="android.intent.category.DEFAULT" />
+                   <category android:name="android.intent.category.BROWSABLE" />
+
+                   <data android:scheme="1106762112" />
+               </intent-filter>
+           </activity>
+       -->
+
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="1106762112" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name="com.xmrxcaifu.activity.GestureVerify_checkActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.xmrxcaifu.activity.MainActivity3"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.MainActivity5"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.MainActivity6"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.xmrxcaifu.activity.PDFWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+
+
+        <activity
+            android:name=".activity.HongBaoWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".activity.NoNetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".activity.MainActivity4"/>
+
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 腾讯定位 sdk 要求的权限  (开始) -->
+    <!-- 通过GPS得到精确位置 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 通过网络得到粗略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 支持A-GPS辅助定位 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 腾讯定位 sdk 要求的权限 (结束) -->
+
+
+    <!-- Demo中使用了腾讯地图 sdk, 腾讯地图 sdk 还要求的以下权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_SINTERNETWIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 非必须权限, 用于记录 log -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 非必须权限, 用于 notification 振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--dialog的权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"></uses-permission>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+    <uses-permission android:name="android.permission.READ_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+
+</manifest>

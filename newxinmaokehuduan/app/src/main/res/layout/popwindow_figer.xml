@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#55555555"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="@dimen/dp_270"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:background="@drawable/shape_juxing3"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+
+
+        <ImageView
+            android:layout_width="105px"
+            android:layout_height="105px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="22px"
+            android:layout_marginTop="30px"
+            android:src="@drawable/zhiwen" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="再试一次"
+            android:textColor="#252525"
+            android:textSize="46px"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/message2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="请验证已有指纹验证"
+            android:textColor="#252525"
+            android:textSize="36px"
+            android:visibility="visible" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#F0F0F0"
+            android:orientation="horizontal" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="@string/cancel"
+                android:textColor="@color/btntextcolor"
+                android:textSize="43px" />
+
+            <View
+                android:id="@+id/layout_mima"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#E5E5E5"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/layout_shuirumima"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="输入密码"
+                android:textColor="@color/btntextcolor"
+
+                android:textSize="43px"
+                android:visibility="gone" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
+

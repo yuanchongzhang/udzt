@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+
+    android:layout_marginLeft="@dimen/dp_40"
+    android:layout_marginRight="@dimen/dp_40"
+    android:background="@drawable/updatebackground"
+    android:orientation="vertical">
+    <!--android:background="#00000000"-->
+
+    <ImageView
+        android:id="@+id/tv_upversion_dialog_clean"
+        android:layout_width="60px"
+        android:layout_height="60px"
+        android:layout_centerVertical="true"
+        android:layout_gravity="right"
+        android:layout_marginRight="40px"
+        android:layout_marginTop="360px"
+        android:src="@drawable/update_closebtn" />
+
+    <TextView
+        android:id="@+id/text_findversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="发现新版本"
+        android:textColor="#c9a063"
+        android:textSize="@dimen/sp_14" />
+
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_findversion"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10px"
+        android:text="1.7"
+        android:textColor="#c9a063"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/tv_upversion_dialog_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40px"
+        android:layout_marginLeft="78px"
+        android:layout_marginTop="5dp"
+        android:lineSpacingMultiplier="1.5"
+        android:padding="5dp"
+        android:text="1."
+        android:textColor="#666666"
+        android:textSize="@dimen/sp_12" />
+
+
+    <TextView
+        android:id="@+id/tv_upversion_dialog_up"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40px"
+
+        android:layout_marginTop="25px"
+        android:background="#c9a063"
+        android:gravity="center"
+        android:text="立即更新"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        android:visibility="visible" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+
+        android:visibility="gone">
+        <!--    android:background="@drawable/update_bg"
+         android:background="@drawable/dialog_background"
+        -->
+        <LinearLayout
+            android:layout_width="897px"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
